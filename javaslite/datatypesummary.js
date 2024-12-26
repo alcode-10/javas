@@ -35,3 +35,13 @@ const myFunction = function(){
 console.log(typeof anotherId);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+//memory
+//memory is stored in form of stack or heap
+//stack=primitive data(pass by value)
+//heap=non primitive data(pass by reference)
+//for heap,reference of the data is given
+
+
+
+
