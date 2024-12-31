@@ -35,7 +35,7 @@ const obj2={3:"a",4:"b"}
 //3
 //spreadout method
 const obj3={...obj1,...obj2}
-console.log(obj3)
+//console.log(obj3)
 
 //OBJECTS WITHIN ARRAYS
 const users = [
@@ -62,3 +62,28 @@ users[1].email
 // console.log(Object.entries(hingeUser));
 
 // console.log(hingeUser.hasOwnProperty('isLoggedIn'));
+
+
+//Destructuring an Object
+const course={
+    courseName:"Javascript",
+    coursePrice:999,
+    courseInstructor:"Manasvi"
+}
+
+//one way to access is simply by dot operator
+//other way 
+//const {courseInstructor}=course
+//you can also rename the variable to be accessed
+const {courseInstructor:Instructor}=course
+console.log(Instructor);
+
+//json format for api
+// {
+//     "name:"manasvi",
+//     "age":"20",
+//     "gender":"female"
+//  }//isme key is also string based
+
+//they can also be executed in form of array
+
