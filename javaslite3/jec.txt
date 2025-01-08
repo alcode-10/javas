@@ -1,0 +1,49 @@
+//JEC=Javascript Execution Context
+//It has GEC=Global Execution Context,which is included always
+// A single-threaded language is a language that uses only one thread. In other words, it executes one thing at a time. 
+// JavaScript is single-threaded, so it executes the current line of code before moving to the next.
+//Types of Execution Context=Gec,Fec(fucntion),Eec(Eval)
+
+//Phases in which a code file in js is executed
+//-1.Memory creation phase
+//2.Execution phase
+
+/*let val1 = 10
+let val2 = 5
+function addNum(num1, num2) {
+    let total = num1 + num2
+    return total
+}
+let result1 = addNum(val1, val2)
+let result2 = addNum(10, 2)*/
+
+//When a program runs,it gets executed in this way
+->firstly,global execution takes place wherein the whole code file is allocated to this operator
+->secondly,all the variables,functions,objects,data structures etc of the code file are gathered together in memory creation phase,variables are assinged undefined
+function ki definition goes within the variable name
+->Now in the execution phase,variable are assigned their values,for functions,a whole new execution context is build
+  ->For a function,a box is created that has new environment variable + execution thread
+    and the first two processes that is of mcp and ep are processed again
+  ->The processes will start their execution from the function definition
+  ->the result of a function will return to global context
+
+  //CALL STACK
+  When a program runs,and a function is encountered it is pushed in to stack,executed and removed from stack
+  In a stack,Global execution context is first pushed and then the further execution starts
+  For more understanding worke out the proble in inspect
+  function one()
+{
+     console.log("one");
+     two()
+}
+function two()
+{
+     console.log("two");
+}
+function three()
+{
+     console.log("three");
+}
+one()
+two()
+three()
