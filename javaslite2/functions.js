@@ -1,5 +1,5 @@
  //function definition
- /*function sayMyName()
+ function sayMyName()
  {
     console.log('M')
     console.log('A')
