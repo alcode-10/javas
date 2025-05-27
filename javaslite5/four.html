@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom continued...</title>
+</head>
+<body style ="background-color: black; color:white">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+    <script>
+        function addlanguage(langn){
+            const li=document.createElement('li')//naya element is list element
+            li.innerHTML=`${langn}`//langn ki value inside li
+            //to attach
+            document.querySelector('.language').appendChild(li);//attache in the doc as well
+        }
+        addlanguage("python")//adding languages
+        //this is problematic as to append you have to traverse the whole tree and append at the end
+
+        function addoptlang(langn)
+        {
+            const li=document.createElement('li');
+            li.appendChild(document.createTextNode(langn))//naya text node append kardiya
+            document.querySelector('.language').appendChild(li)
+        }
+        addoptlang('golang')
+
+        //to edit a value
+        document.querySelector("li:nth-child(2)")
+    </script>
+    
+</body>
+</html>

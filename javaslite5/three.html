@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom continued</title>
+</head>
+<body style ="background-color: black; color:white">
+    <script>
+        const div= document.createElement('div');
+        console.log(div);
+        div.className="main";
+        div.id=Math.round(Math.random() * 10 + 1);
+        //to add attributes,div.setAttribute
+        div.setAttribute("title","generated title");
+        div.style.backgroundColor="green";
+        div.style.padding="12px";
+        //not yet displayed on page becuse its still in memory not attached to actual page
+        // div.innerText="manasvi";
+        const addText =document.createTextNode("manasvi");//textual part of the div
+        div.appendChild(addText)//text node ko create karke phir attach karna
+        document.body.appendChild(div)//appended to main documents
+
+        //if we change div values using dot operator they are overwritten,set attribute directly sets the value
+
+
+
+
+    </script>
+    
+</body>
+</html>
