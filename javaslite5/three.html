@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,4 +29,88 @@
     </script>
     
 </body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom continued...</title>
+</head>
+<body style ="background-color: black; color:white">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+    <script>
+        function addlanguage(langn){
+            const li=document.createElement('li')//naya element is list element
+            li.innerHTML=`${langn}`//langn ki value inside li
+            //to attach
+            document.querySelector('.language').appendChild(li);//attache in the doc as well
+        }
+        addlanguage("python")//adding languages
+        //this is problematic as to append you have to traverse the whole tree and append at the end
+
+        function addoptlang(langn)
+        {
+            const li=document.createElement('li');
+            li.appendChild(document.createTextNode(langn))//naya text node append kardiya
+            document.querySelector('.language').appendChild(li)
+        }
+        addoptlang('golang')
+
+        //to edit a value
+        document.querySelector("li:nth-child(2)")//li:nth-child(2) selects the <li> element only if it is the 2nd child of its parent.
+    </script>
+    
+</body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    //Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    //secondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+
+</script>
+</html> -->
