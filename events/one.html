@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #414141; color:aliceblue">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>//1.all events run sequentially
+    //3.other approach to use onclick
+    // document.getElementById("owl").onclick=function(){
+    //     alert("owl clicked");
+    // }
+    //4.above method is good but provides less features
+    //5.Best approach
+    // document.getElementById("owl").addEventListener("click",function(){
+    //  alert("owl clicked again")
+    // },false)
+    //false is by deafult and very important
+    //there are multiple events that you can handle inside
+
+//     document.getElementById("owl").addEventListener('click',function(e){
+//         //e is the event object
+//         console.log(e)
+
+//         //type of events,timestamp,defaultPrevented
+//         //target,toElement,srcElement,currentTarget
+//         //clientx,clienty,screenX,screenY
+//         //altkey,ctrlkey,shiftkey,keycode
+//     })
+
+// //event bubbling,event capturing=related to propagation of an event
+// //example
+// document.getElementById("images").addEventListener('click',function(e){
+//         //e is the event object
+//         console.log("clicked inside ul")
+//     })
+//     document.getElementById("owl").addEventListener('click',function(e){
+//         //e is the event object
+//         console.log("owl clicked")
+//         //e.stopPropagation(),yeh bubble hokar upar nhi jayega
+//     })
+//     //this is example of bubbling where propagation happens from below,like firs owl clicked will be printed and then clicked inside ul will be 
+//     //printed
+//     //when default value is false
+//     //if value is true,then we take event capturing which prints from top to bottom
+//     //first-clicked inside ul is printed and then owl clicked
+//     document.getElementById('google').addEventListener('click',function(e)
+// {
+//     e.preventDefault();
+//     console.log("google clicked")
+//     //this will prevent the element associated with id to fall back to its original condition
+// })
+
+//click on image and they dissapear
+document.getElementById("images").addEventListener('click',function(e){
+     //target yeh btayega kahan se img aarhi
+    console.log(e.target.parentNode)
+    let removed=e.target.parentNode;
+    removed.remove()//to remove the image
+    //other method
+    //removed.parentNode.removeChild(removed);
+   
+
+
+},false)
+
+
+
+
+
+</script>
+</html>
+<!-- 2.injecting onClick inside HTML not a good approach,bad for scaling -->

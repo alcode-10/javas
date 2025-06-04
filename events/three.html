@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Async continued</h1>
+    <button id="start">Start </button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const date=function(str){
+        console.log(str,Date.now())
+    }
+    var interval=null;
+    document.querySelector('#start').addEventListener('click',function(str){
+        if(!interval)
+        interval=setInterval(date,1000,"caaaaaamellia")
+    })
+    //const interval =setInterval(date,1000,"caaaaaamellia")
+     document.querySelector('#stop').addEventListener('click',function(str){
+        if(interval!==null){
+        clearInterval(interval);
+        interval=null;
+        }
+    })
+    //const interval= setInterval(date,1000,"Cham Cham")//works after a given time,thir paramenter is passed as the value to be used in the fucntion
+    // clearInterval(interval) // clear interval of the setinterval
+   
+</script>
+
+</html>

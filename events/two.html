@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Manasvi</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // const hey = function () {//ek time ke baad execution
+    //     console.log("manasvi hehe")
+    // }
+    const changeT = function(){
+        document.querySelector('h1').innerHTML='I AM THE BEST'
+    }
+    const hehe=setTimeout(changeT//pass reference
+        , 2000)//handler is a function
+    //setInterval()//ek time tak execution
+
+    // clearTimeout(hehe)//we can paasss the reference of the function
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(hehe)
+        console.log("stopped") 
+    })// this above snippet will not change the value of h1
+
+</script>
+
+</html>
