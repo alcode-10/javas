@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=f, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //the xmlhttprequest helps in requesting data from web server
+    //syntax
+    let xhr = new XMLHttpRequest() //creates an object
+    // This object allows JavaScript to make HTTP requests to a server (like APIs).
+    xhr.open('GET','https://api.github.com/users/alcode-10') //request prepare,not sent yet
+    xhr.onreadystatechange = function(){
+       console.log(xhr.readyState) // tracking state change and printing
+       if(xhr.readyState === 4){
+    //    console.log(this.responseText) /// recieved as text,conveert to Json
+        const data = JSON.parse(this.responseText)//json mein convert hoga through parse
+        console.log(data.followers);
+       }
+    }
+    xhr.send()
+//readyState	Meaning
+// 0	    Request not initialized
+// 1	    Server connection established
+// 2	    Request received
+// 3	    Processing request
+// 4	    Request finished and response is ready
+    </script>
+</html>

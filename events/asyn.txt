@@ -1,0 +1,14 @@
+Async code
+js-synchronus(sequential),single threaded(ek hi thread par sb kuch hota h)
+js engine is always found with browser or runtime environemnt 
+this is default behaviour
+
+execution context
+->execute one line of coede at a time
+->eg-console log 1
+->console log 2
+//here,each operations waits for the last one to complete before executing next one(single thread)
+
+Blocking code(blocks the flow of Program,Read file sync)
+Non Blocking Code(Does not block execution,read file async)
+the above two are used according to the use cases
